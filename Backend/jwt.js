@@ -81,6 +81,8 @@ export const encodeToken = (object = {}) => {
   );
   return token;
 };
+
+
 export const verifyToken = (sentToken) => {
   const options = {
     issuer: "My App",

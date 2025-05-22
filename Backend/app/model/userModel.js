@@ -12,6 +12,7 @@
 //   await db.query(sql, [name,email, hashedPassword]);
 // };
 
+//
 
 import db from '../config/db.js';
 import bcrypt from "bcrypt";
@@ -32,6 +33,11 @@ class userService {
   static async hashPassword(password) {
     return await bcrypt.hash(password, 10);
   }
+
+  static async comparePassword(plainPassword, hashedPassword) {
+  return await bcrypt.compare(plainPassword, hashedPassword);
+}
+
 }
  
 export default userService;
